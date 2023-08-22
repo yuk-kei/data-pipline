@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  influxdb:
+    image: influxdb:latest
+    restart: always
+    ports:
+      - 8086:8086
+    volumes:
+      - $PWD/influxdb_data/influxdb_data:/var/lib/influxdb2
+      - $PWD/config.yml:/etc/influxdb2/config.yml
